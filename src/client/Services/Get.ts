@@ -12,7 +12,7 @@ export default async function Get(
             },
         });
         return response.json();
-    } catch (e) {
+    } catch (e : any) {
         throw new Error(e);
     }
 }

@@ -14,7 +14,7 @@ export default async function Post(
             body: JSON.stringify(body)
         });
         return response.json();
-    } catch (e) {
+    } catch (e : any) {
         throw new Error(e);
     }
 }

@@ -4,8 +4,8 @@ export const configs: IConfigs = {
     mongodb: {
         url: 'localhost',
         port: 27017,
-        username: '',
-        password: '',
+        username: 'sugarscape',
+        password: 'sugarscape',
         collection: 'test',
     }
 }
