@@ -12,9 +12,10 @@ class Database {
     }
 
     dbConnection(): Mongoose {
+        console.log("Getting db connection...")
         const {mongodb: {url, port, collection, password, username}} = this._config;
         const mongoURL = (username && password)
-            ? `mongodb://${username}:${password}${url}:${port}/${collection}`
+            ? `mongodb://${username}:${password}@${url}:${port}/${collection}`
             : `mongodb://${url}:${port}/${collection}`;
         this._mongo
             .connect(
@@ -26,6 +27,7 @@ class Database {
         db.once('open', () => {
             console.log("connected")
         })
+        console.log("Got:", mongoose)
         return mongoose;
     }
 
